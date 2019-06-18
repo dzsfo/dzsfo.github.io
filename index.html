@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-18 12:33:43" itemprop="dateModified" datetime="2019-06-18T12:33:43+08:00">2019-06-18</time>
+                <time title="修改时间：2019-06-18 13:46:34" itemprop="dateModified" datetime="2019-06-18T13:46:34+08:00">2019-06-18</time>
               
             
           </span>
@@ -435,45 +435,22 @@
 
       
         
-          
-            <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+          <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>阿里云轻量应用服务器：CentOS7.3</li>
-<li>域名：<a href="http://www.dzsfo.com">www.dzsfo.com</a> </li>
+<li>域名：<a href="http://www.dzsfo.com">www.dzsfo.com</a> <a href="http://www.dzs.design" target="_blank" rel="noopener">www.dzs.design</a></li>
 <li>CDN：cloudflare</li>
 <li>Github账号</li>
+<li>Coding账号</li>
 </ul>
-<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><h5 id="配置yum源并更新软件包"><a href="#配置yum源并更新软件包" class="headerlink" title="配置yum源并更新软件包"></a>配置yum源并更新软件包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release -y</span><br><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum update -y</span><br><span class="line">touch /etc/yum.repos.d/Nginx.repo</span><br></pre></td></tr></table></figure>
-
-<p>写入内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx] </span><br><span class="line">name=nginx repo </span><br><span class="line">baseurl=http://nginx.org/packages/centos/$releasever/$basearch/ </span><br><span class="line">gpgcheck=0 </span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>
-
-<h5 id="yum安装Nginx-NodeJS-Git"><a href="#yum安装Nginx-NodeJS-Git" class="headerlink" title="yum安装Nginx NodeJS Git"></a>yum安装Nginx NodeJS Git</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install git nginx nodejs -y</span><br><span class="line">npm config set registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
-
-<h4 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h4><h5 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h5><blockquote>
-<p>方便Nginx部署直接进入Nginx的目录</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">cd /usr/share/nginx</span><br><span class="line">rm -rf html</span><br><span class="line">hexo init html</span><br><span class="line">cd html</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h5 id="修改站点配置"><a href="#修改站点配置" class="headerlink" title="修改站点配置"></a>修改站点配置</h5><blockquote>
-<p>注意冒号后面必须有一个空格</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: "Dzsfo's Blog" #站点标题</span><br><span class="line">subtitle: "站点副标题"</span><br><span class="line">description: "描述"</span><br><span class="line">keywords: "关键字"</span><br><span class="line">author: "作者,也就是你的名字"</span><br><span class="line">language: "zh-CN" #根据你主题的languages目录中的文件来决定</span><br><span class="line">timezone: "Asia/Shanghai" #时区</span><br><span class="line">url: "https://www.dzsfo.com" #站点中所有涉及到链接的地方都会调用这个，所以改成你自己的域名</span><br></pre></td></tr></table></figure>
-
-<h5 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="部署发布"><a href="#部署发布" class="headerlink" title="部署发布"></a>部署发布</h3><h5 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h5><blockquote>
-<p>有时间再补充</p>
-</blockquote>
-<h5 id="Hexo自带Server"><a href="#Hexo自带Server" class="headerlink" title="Hexo自带Server"></a>Hexo自带Server</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 80</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Hexo自带Server这种方式是有一个坑的，如果是在服务器上面运行Hexo，退出终端的话，服务也会随之停止。虽然网上有很多方式，比如用nohup，或者是nodejs的forever，但我试了一下都不太管用，好在Hexo的机制是生成纯静态文件，莫不如用Nginx来的实在。</p>
-</blockquote>
-<h5 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h5><blockquote>
-<p>有时间再补充</p>
-</blockquote>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/16/hexo/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
