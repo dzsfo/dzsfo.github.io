@@ -103,13 +103,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Dzsfo&#39;s Blog">
-<meta property="og:url" content="https://www.dzsfo.com/index.html">
+  <meta name="description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。  BBR介绍BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务器显著地提高吞吐量和减少 TCP 连接的延迟。 BBR解决了两个问题： 再有一定丢包率的网络链路上充分">
+<meta name="keywords" content="BBR,CentOS,Linux,VPS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7开启BBR,VPS速度来个飞升">
+<meta property="og:url" content="https://www.dzsfo.com/2019/06/19/BBR/index.html">
 <meta property="og:site_name" content="Dzsfo&#39;s Blog">
+<meta property="og:description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。  BBR介绍BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务器显著地提高吞吐量和减少 TCP 连接的延迟。 BBR解决了两个问题： 再有一定丢包率的网络链路上充分">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-19T08:02:55.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dzsfo&#39;s Blog">
+<meta name="twitter:title" content="CentOS7开启BBR,VPS速度来个飞升">
+<meta name="twitter:description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。  BBR介绍BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务器显著地提高吞吐量和减少 TCP 连接的延迟。 BBR解决了两个问题： 再有一定丢包率的网络链路上充分">
 
 
 
@@ -117,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://www.dzsfo.com/">
+  <link rel="canonical" href="https://www.dzsfo.com/2019/06/19/BBR/">
 
 
 
@@ -127,7 +132,7 @@
   };
 </script>
 
-  <title>Dzsfo's Blog</title>
+  <title>CentOS7开启BBR,VPS速度来个飞升 | Dzsfo's Blog</title>
   
 
 
@@ -175,8 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,7 +222,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -321,9 +325,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -355,10 +359,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/19/BBR/" class="post-title-link" itemprop="url">CentOS7开启BBR,VPS速度来个飞升</a>
+          <h1 class="post-title" itemprop="name headline">CentOS7开启BBR,VPS速度来个飞升
+
               
             
           </h1>
@@ -422,9 +424,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>开启BBR TCP加速，让你的VPS更加稳的一匹。</p>
 <p>买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。</p>
 <p>整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。</p>
@@ -460,8 +460,6 @@
 
 <p>不用确认了 ，Over！</p>
 
-          
-        
       
     </div>
 
@@ -482,181 +480,45 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.dzsfo.com/2019/06/16/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dzsfo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/smg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dzsfo's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
         
+          
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/16/hexo/" class="post-title-link" itemprop="url">我这个Blog的搭建过程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-16 11:50:19" itemprop="dateCreated datePublished" datetime="2019-06-16T11:50:19+08:00">2019-06-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-18 13:46:34" itemprop="dateModified" datetime="2019-06-18T13:46:34+08:00">2019-06-18</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/BBR/" rel="tag"># BBR</a>
           
-            
-            
+            <a href="/tags/CentOS/" rel="tag"># CentOS</a>
           
-
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
+            <a href="/tags/VPS/" rel="tag"># VPS</a>
           
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>阿里云轻量应用服务器：CentOS7.3</li>
-<li>域名：<a href="http://www.dzsfo.com">www.dzsfo.com</a> <a href="http://www.dzs.design" target="_blank" rel="noopener">www.dzs.design</a></li>
-<li>CDN：cloudflare</li>
-<li>Github账号</li>
-<li>Coding账号</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/16/hexo/" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/16/hexo/" rel="next" title="我这个Blog的搭建过程">
+                <i class="fa fa-chevron-left"></i> 我这个Blog的搭建过程
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -666,14 +528,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -693,8 +556,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -797,6 +669,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BBR介绍"><span class="nav-number">1.</span> <span class="nav-text">BBR介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制粘贴就是干"><span class="nav-number">2.</span> <span class="nav-text">复制粘贴就是干</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看内核"><span class="nav-number">2.1.</span> <span class="nav-text">查看内核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#升级内核"><span class="nav-number">2.2.</span> <span class="nav-text">升级内核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改grub2引导"><span class="nav-number">2.3.</span> <span class="nav-text">修改grub2引导</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启BBR"><span class="nav-number">2.4.</span> <span class="nav-text">开启BBR</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -928,6 +817,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -943,6 +836,8 @@
 
   
 
+
+  
 
 
   
