@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Dzsfo&#39;s Blog">
 <meta property="og:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-28T03:11:09.376Z">
+<meta property="og:updated_time" content="2019-06-28T03:18:41.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7安装SSR科学网上冲浪">
 <meta name="twitter:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-06-28 10:22:02 / 修改时间：11:11:09" itemprop="dateCreated datePublished" datetime="2019-06-28T10:22:02+08:00">2019-06-28</time>
+              <time title="创建时间：2019-06-28 10:22:02 / 修改时间：11:18:41" itemprop="dateCreated datePublished" datetime="2019-06-28T10:22:02+08:00">2019-06-28</time>
             
 
             
@@ -492,12 +492,14 @@
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
 <li>VPS一台</li>
 <li>开启BBR</li>
-<li>系统选择CentOS7</li>
+<li>系统CentOS7</li>
 </ol>
-<h5 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h5><p>推荐搬瓦工和Vultr，我用的是Vultr（便宜实惠，最低的3.5刀/月）</p>
+<h5 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h5><blockquote>
+<p>推荐搬瓦工和Vultr，我用的是Vultr（便宜实惠，最低的3.5刀/月）</p>
+</blockquote>
 <p><a href="https://www.vultr.com/?ref=8161098" target="_blank" rel="noopener">Vultr</a></p>
 <h5 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h5><p><a href="https://www.dzsfo.com/2019/06/19/BBR/">开启指南</a></p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="这里使用teddysun一键脚本"><a href="#这里使用teddysun一键脚本" class="headerlink" title="这里使用teddysun一键脚本"></a>这里使用teddysun一键脚本</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="使用teddysun一键脚本"><a href="#使用teddysun一键脚本" class="headerlink" title="使用teddysun一键脚本"></a>使用teddysun一键脚本</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果你看不懂过程中的配置，那就一路回车，后面我们自己修改配置</p>
@@ -854,7 +856,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#VPS"><span class="nav-number">1.1.</span> <span class="nav-text">VPS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启BBR"><span class="nav-number">1.2.</span> <span class="nav-text">开启BBR</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里使用teddysun一键脚本"><span class="nav-number">2.1.</span> <span class="nav-text">这里使用teddysun一键脚本</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SSR配置"><span class="nav-number">3.1.</span> <span class="nav-text">SSR配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#防火墙的配置"><span class="nav-number">3.2.</span> <span class="nav-text">防火墙的配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">4.</span> <span class="nav-text">启动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#VPS"><span class="nav-number">1.1.</span> <span class="nav-text">VPS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启BBR"><span class="nav-number">1.2.</span> <span class="nav-text">开启BBR</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用teddysun一键脚本"><span class="nav-number">2.1.</span> <span class="nav-text">使用teddysun一键脚本</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SSR配置"><span class="nav-number">3.1.</span> <span class="nav-text">SSR配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#防火墙的配置"><span class="nav-number">3.2.</span> <span class="nav-text">防火墙的配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">4.</span> <span class="nav-text">启动</span></a></li></ol></div>
             
 
           </div>
