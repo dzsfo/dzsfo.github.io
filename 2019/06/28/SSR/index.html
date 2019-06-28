@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。">
-<meta name="keywords" content="BBR,CentOS,Linux,VPS">
+  <meta name="description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
+<meta name="keywords" content="BBR,CentOS,Linux,SSR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7开启BBR,VPS速度来个飞升">
-<meta property="og:url" content="https://www.dzsfo.com/2019/06/19/BBR/index.html">
+<meta property="og:title" content="CentOS7安装SSR科学网上冲浪">
+<meta property="og:url" content="https://www.dzsfo.com/2019/06/28/SSR/index.html">
 <meta property="og:site_name" content="Dzsfo&#39;s Blog">
-<meta property="og:description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。">
+<meta property="og:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-19T09:53:05.023Z">
+<meta property="og:updated_time" content="2019-06-28T02:23:54.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS7开启BBR,VPS速度来个飞升">
-<meta name="twitter:description" content="开启BBR TCP加速，让你的VPS更加稳的一匹。 买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。 整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。">
+<meta name="twitter:title" content="CentOS7安装SSR科学网上冲浪">
+<meta name="twitter:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
 
 
 
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://www.dzsfo.com/2019/06/19/BBR/">
+  <link rel="canonical" href="https://www.dzsfo.com/2019/06/28/SSR/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>CentOS7开启BBR,VPS速度来个飞升 | Dzsfo's Blog</title>
+  <title>CentOS7安装SSR科学网上冲浪 | Dzsfo's Blog</title>
   
 
 
@@ -344,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.dzsfo.com/2019/06/19/BBR/">
+    <link itemprop="mainEntityOfPage" href="https://www.dzsfo.com/2019/06/28/SSR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dzsfo">
@@ -361,7 +361,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS7开启BBR,VPS速度来个飞升
+          <h1 class="post-title" itemprop="name headline">CentOS7安装SSR科学网上冲浪
 
               
             
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-06-19 16:01:05 / 修改时间：17:53:05" itemprop="dateCreated datePublished" datetime="2019-06-19T16:01:05+08:00">2019-06-19</time>
+              <time title="创建时间：2019-06-28 10:22:02 / 修改时间：10:23:54" itemprop="dateCreated datePublished" datetime="2019-06-28T10:22:02+08:00">2019-06-28</time>
             
 
             
@@ -409,7 +409,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VPS/" itemprop="url" rel="index"><span itemprop="name">VPS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/VPS/" itemprop="url" rel="index"><span itemprop="name">VPS</span></a></span>
 
                 
                 
@@ -445,7 +452,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.5k</span>
+                <span title="本文字数">1.7k</span>
               
 
               
@@ -459,7 +466,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -479,41 +486,38 @@
       
 
       
-        <p>开启BBR TCP加速，让你的VPS更加稳的一匹。</p>
-<p>买了台搬瓦工或者Vultr用来科学上网，装完酸酸乳或者v2之后开启BBR或许也是必备的。</p>
-<p>整理了一下CentOS开启BBR的过程，傻瓜式复制粘贴就是干。</p>
+        <p>搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界</p>
 <a id="more"></a>
 
-<h4 id="BBR介绍"><a href="#BBR介绍" class="headerlink" title="BBR介绍"></a>BBR介绍</h4><p>BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务器显著地提高吞吐量和减少 TCP 连接的延迟。</p>
-<p>BBR解决了两个问题：</p>
-<p>再有一定丢包率的网络链路上充分利用带宽。非常适合高延迟，高带宽的网络链路。</p>
-<p>降低网络链路上的buffer占用率，从而降低延迟。非常适合慢速接入网络的用户。</p>
-<p>项目地址:<a href="https://github.com/google/bbr" target="_blank" rel="noopener">https://github.com/google/bbr</a></p>
-<h4 id="复制粘贴就是干"><a href="#复制粘贴就是干" class="headerlink" title="复制粘贴就是干"></a>复制粘贴就是干</h4><h5 id="查看内核"><a href="#查看内核" class="headerlink" title="查看内核"></a>查看内核</h5><p>开启 BBR 要求 4.10 以上版本 Linux 内核，使用以下命令查看当前内核版本：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>本文操作系统为CentOS7</strong></p>
+</blockquote>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h5 id="这里使用teddysun一键脚本"><a href="#这里使用teddysun一键脚本" class="headerlink" title="这里使用teddysun一键脚本"></a>这里使用teddysun一键脚本</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
 
-<p>大部分情况下，你得到的结果是类似于这样的：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.10.0-514.10.2.el7.x86_64</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你看不懂过程中的配置，那就一路回车，后面我们自己修改配置</p>
+</blockquote>
+<p>至此，如果你是自己填写的配置信息，那你就直接可以用各种支持SSR的客户端去连接了</p>
+<p>如果是一路回车，请继续往下看</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>配置分为两部分</p>
+<ol>
+<li>SSR的配置</li>
+<li>防火墙的配置</li>
+</ol>
+<h5 id="SSR配置"><a href="#SSR配置" class="headerlink" title="SSR配置"></a>SSR配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
 
-<h5 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h5><p>我们上面提到了 要求4.10以上版本的Linux内核才可以开启BBR，所以我们升级内核：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br><span class="line">rpm -qa | grep kernel</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"[::]"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    "port_password":&#123;#将原来的port与password删掉，添加本段</span><br><span class="line">        "23456":"dzsfo",#将端口号与密码以此形式添加</span><br><span class="line">        "34567":"bobo"#注意：多用户情况下，最后一个用户结尾的逗号要删掉</span><br><span class="line">    &#125;,</span><br><span class="line">    "timeout":120,</span><br><span class="line">    "method":"chacha20",#加密方式</span><br><span class="line">    "protocol":"auth_sha1_v4",#协议</span><br><span class="line">    "protocol_param":"",</span><br><span class="line">    "obfs":"tls1.2_ticket_auth",#混淆</span><br><span class="line">    "obfs_param":"",</span><br><span class="line">    "redirect":"",</span><br><span class="line">    "dns_ipv6":false,</span><br><span class="line">    "fast_open":false,</span><br><span class="line">    "workers":1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>执行结果中我们可以看到类似于<code>kernel-ml-4.11.0-1.el7.elrepo.x86_64</code>这样的结果，就表示升级成功了。</p>
-<h5 id="修改grub2引导"><a href="#修改grub2引导" class="headerlink" title="修改grub2引导"></a>修改grub2引导</h5><p>升级成功后我们需要用最新升级的内核来启动系统，执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \'</span><br></pre></td></tr></table></figure>
+<h5 id="防火墙的配置"><a href="#防火墙的配置" class="headerlink" title="防火墙的配置"></a>防火墙的配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/firewalld/zones/public.xml</span><br></pre></td></tr></table></figure>
 
-<p>得到的结果如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.11.0-1.el7.elrepo.x86_64)</span><br><span class="line">CentOS Linux (4.11.0-1.el7.elrepo.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.16.1.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-123.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (0-rescue-2d3f9371c20d3e90a544ccc814d485e3) 7 (Core)</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">zone</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">short</span>&gt;</span>Public<span class="tag">&lt;/<span class="name">short</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">description</span>&gt;</span>For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">service</span> <span class="attr">name</span>=<span class="string">"dhcpv6-client"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">service</span> <span class="attr">name</span>=<span class="string">"ssh"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span> <span class="attr">protocol</span>=<span class="string">"tcp"</span> <span class="attr">port</span>=<span class="string">"23456"</span>/&gt;</span> <span class="comment">&lt;!-- 添加SSR配置中的端口 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span> <span class="attr">protocol</span>=<span class="string">"udp"</span> <span class="attr">port</span>=<span class="string">"23456"</span>/&gt;</span> <span class="comment">&lt;!-- 注意：每个端口要添加TCP与UDP两条 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span> <span class="attr">protocol</span>=<span class="string">"tcp"</span> <span class="attr">port</span>=<span class="string">"34567"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span> <span class="attr">protocol</span>=<span class="string">"udp"</span> <span class="attr">port</span>=<span class="string">"34567"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">zone</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>我们看到<code>CentOS Linux (4.11.0-1.el7.elrepo.x86_64) 7 (Core)</code>是在第二位，而我们的引导顺序是从0开始，所以我们想设置第二位为首选启动应该设置的索引值是1，并重启系统：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo grub2-set-default 1</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>SSR配置文件与防火墙都配置好，执行命令重启服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks restart</span><br><span class="line">systemctl restart firewalld</span><br></pre></td></tr></table></figure>
 
-<p>重启之后再次使用<code>uname -r</code>来确定系统内核。</p>
-<p>得到类似<code>4.11.0-1.el7.elrepo.x86_64</code>的结果代表升级成功。</p>
-<h5 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h5><p>执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 'net.core.default_qdisc=fq' | sudo tee -a /etc/sysctl.conf</span><br><span class="line">echo 'net.ipv4.tcp_congestion_control=bbr' | sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-
-<p>不用确认了 ，Over！</p>
+<blockquote>
+<p><strong>接下来，就用你的各种客户端来连接你的SSR服务器看看外面的世界吧！</strong></p>
+</blockquote>
 
       
     </div>
@@ -573,7 +577,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.dzsfo.com/2019/06/19/BBR/" title="CentOS7开启BBR,VPS速度来个飞升">https://www.dzsfo.com/2019/06/19/BBR/</a>
+    <a href="https://www.dzsfo.com/2019/06/28/SSR/" title="CentOS7安装SSR科学网上冲浪">https://www.dzsfo.com/2019/06/28/SSR/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -599,7 +603,7 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/VPS/" rel="tag"># VPS</a>
+            <a href="/tags/SSR/" rel="tag"># SSR</a>
           
         </div>
       
@@ -612,8 +616,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/16/hexo/" rel="next" title="我这个Blog的搭建过程">
-                <i class="fa fa-chevron-left"></i> 我这个Blog的搭建过程
+              <a href="/2019/06/25/ios-book/" rel="next" title="iOS看书神器，可以自己加源">
+                <i class="fa fa-chevron-left"></i> iOS看书神器，可以自己加源
               </a>
             
           </div>
@@ -621,10 +625,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/24/kill-aliyun/" rel="prev" title="卸载阿里云盾、云监控、安骑士">
-                卸载阿里云盾、云监控、安骑士 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -849,7 +849,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BBR介绍"><span class="nav-number">1.</span> <span class="nav-text">BBR介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制粘贴就是干"><span class="nav-number">2.</span> <span class="nav-text">复制粘贴就是干</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看内核"><span class="nav-number">2.1.</span> <span class="nav-text">查看内核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#升级内核"><span class="nav-number">2.2.</span> <span class="nav-text">升级内核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改grub2引导"><span class="nav-number">2.3.</span> <span class="nav-text">修改grub2引导</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启BBR"><span class="nav-number">2.4.</span> <span class="nav-text">开启BBR</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这里使用teddysun一键脚本"><span class="nav-number">1.1.</span> <span class="nav-text">这里使用teddysun一键脚本</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SSR配置"><span class="nav-number">2.1.</span> <span class="nav-text">SSR配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#防火墙的配置"><span class="nav-number">2.2.</span> <span class="nav-text">防火墙的配置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">3.</span> <span class="nav-text">启动</span></a></li></ol></div>
             
 
           </div>
