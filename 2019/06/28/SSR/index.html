@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Dzsfo&#39;s Blog">
 <meta property="og:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-28T03:18:41.156Z">
+<meta property="og:updated_time" content="2019-06-28T03:21:13.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7安装SSR科学网上冲浪">
 <meta name="twitter:description" content="搞一台非大陆的服务器装上酸酸乳（SSR），去google看看外面的世界">
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-06-28 10:22:02 / 修改时间：11:18:41" itemprop="dateCreated datePublished" datetime="2019-06-28T10:22:02+08:00">2019-06-28</time>
+              <time title="创建时间：2019-06-28 10:22:02 / 修改时间：11:21:13" itemprop="dateCreated datePublished" datetime="2019-06-28T10:22:02+08:00">2019-06-28</time>
             
 
             
@@ -452,7 +452,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.7k</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -513,7 +513,7 @@
 </ol>
 <h5 id="SSR配置"><a href="#SSR配置" class="headerlink" title="SSR配置"></a>SSR配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"[::]"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    "port_password":&#123;#将原来的port与password删掉，添加本段</span><br><span class="line">        "23456":"dzsfo",#将端口号与密码以此形式添加</span><br><span class="line">        "34567":"bobo"#注意：多用户情况下，最后一个用户结尾的逗号要删掉</span><br><span class="line">    &#125;,</span><br><span class="line">    "timeout":120,</span><br><span class="line">    "method":"chacha20",#加密方式</span><br><span class="line">    "protocol":"auth_sha1_v4",#协议</span><br><span class="line">    "protocol_param":"",</span><br><span class="line">    "obfs":"tls1.2_ticket_auth",#混淆</span><br><span class="line">    "obfs_param":"",</span><br><span class="line">    "redirect":"",</span><br><span class="line">    "dns_ipv6":false,</span><br><span class="line">    "fast_open":false,</span><br><span class="line">    "workers":1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"[::]"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    "port_password":&#123; //将原来的port与password删掉，添加本段</span><br><span class="line">        "23456":"dzsfo", //将端口号与密码以此形式添加</span><br><span class="line">        "34567":"bobo" //注意：多用户情况下，最后一个用户结尾的逗号要删掉</span><br><span class="line">    &#125;,</span><br><span class="line">    "timeout":120,</span><br><span class="line">    "method":"chacha20", //加密方式</span><br><span class="line">    "protocol":"auth_sha1_v4", //协议</span><br><span class="line">    "protocol_param":"",</span><br><span class="line">    "obfs":"tls1.2_ticket_auth", //混淆</span><br><span class="line">    "obfs_param":"",</span><br><span class="line">    "redirect":"",</span><br><span class="line">    "dns_ipv6":false,</span><br><span class="line">    "fast_open":false,</span><br><span class="line">    "workers":1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="防火墙的配置"><a href="#防火墙的配置" class="headerlink" title="防火墙的配置"></a>防火墙的配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/firewalld/zones/public.xml</span><br></pre></td></tr></table></figure>
 
