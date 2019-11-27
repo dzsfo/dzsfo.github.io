@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="准备工作 阿里云轻量应用服务器：CentOS7.3 域名：www.dzsfo.com www.dzs.design CDN：cloudflare Github账号 coding账号 腾讯云账号">
-<meta name="keywords" content="Hexo,Blog,Github">
+  <meta name="description" content="CentOS如果最小化安装的话是无图形界面的，而大部分Oracle安装都是以图形化界面进行的。 网上找了好多静默安装的相关文章，无一成功，故整理一份亲测成功的流程。">
+<meta name="keywords" content="Oracle,Java,JDK">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我这个Blog的搭建过程">
-<meta property="og:url" content="https://www.dzsfo.com/2019/06/16/hexo/index.html">
+<meta property="og:title" content="CentOS静默安装Oracle11g与jdk">
+<meta property="og:url" content="https://www.dzsfo.com/2019/11/27/Oracle11g/index.html">
 <meta property="og:site_name" content="Dzsfo&#39;s Blog">
-<meta property="og:description" content="准备工作 阿里云轻量应用服务器：CentOS7.3 域名：www.dzsfo.com www.dzs.design CDN：cloudflare Github账号 coding账号 腾讯云账号">
+<meta property="og:description" content="CentOS如果最小化安装的话是无图形界面的，而大部分Oracle安装都是以图形化界面进行的。 网上找了好多静默安装的相关文章，无一成功，故整理一份亲测成功的流程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-20T08:47:45.561Z">
+<meta property="og:updated_time" content="2019-11-27T02:39:41.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我这个Blog的搭建过程">
-<meta name="twitter:description" content="准备工作 阿里云轻量应用服务器：CentOS7.3 域名：www.dzsfo.com www.dzs.design CDN：cloudflare Github账号 coding账号 腾讯云账号">
+<meta name="twitter:title" content="CentOS静默安装Oracle11g与jdk">
+<meta name="twitter:description" content="CentOS如果最小化安装的话是无图形界面的，而大部分Oracle安装都是以图形化界面进行的。 网上找了好多静默安装的相关文章，无一成功，故整理一份亲测成功的流程。">
 
 
 
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://www.dzsfo.com/2019/06/16/hexo/">
+  <link rel="canonical" href="https://www.dzsfo.com/2019/11/27/Oracle11g/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>我这个Blog的搭建过程 | Dzsfo's Blog</title>
+  <title>CentOS静默安装Oracle11g与jdk | Dzsfo's Blog</title>
   
 
 
@@ -344,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.dzsfo.com/2019/06/16/hexo/">
+    <link itemprop="mainEntityOfPage" href="https://www.dzsfo.com/2019/11/27/Oracle11g/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dzsfo">
@@ -361,7 +361,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我这个Blog的搭建过程
+          <h1 class="post-title" itemprop="name headline">CentOS静默安装Oracle11g与jdk
 
               
             
@@ -387,28 +387,30 @@
                 
               
 
-              <time title="创建时间：2019-06-16 11:50:19" itemprop="dateCreated datePublished" datetime="2019-06-16T11:50:19+08:00">2019-06-16</time>
+              <time title="创建时间：2019-11-27 10:39:41" itemprop="dateCreated datePublished" datetime="2019-11-27T10:39:41+08:00">2019-11-27</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-20 16:47:45" itemprop="dateModified" datetime="2019-06-20T16:47:45+08:00">2019-06-20</time>
-              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -439,7 +441,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">3.3k</span>
               
 
               
@@ -453,7 +455,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -473,45 +475,58 @@
       
 
       
-        <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>阿里云轻量应用服务器：CentOS7.3</li>
-<li>域名：<a href="http://www.dzsfo.com">www.dzsfo.com</a> <a href="http://www.dzs.design" target="_blank" rel="noopener">www.dzs.design</a></li>
-<li>CDN：cloudflare</li>
-<li>Github账号</li>
-<li><del>coding账号</del> 腾讯云账号</li>
-</ul>
+        <p>CentOS如果最小化安装的话是无图形界面的，而大部分Oracle安装都是以图形化界面进行的。</p>
+<p>网上找了好多静默安装的相关文章，无一成功，故整理一份亲测成功的流程。</p>
 <a id="more"></a>
 
-<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><h5 id="配置yum源并更新软件包"><a href="#配置yum源并更新软件包" class="headerlink" title="配置yum源并更新软件包"></a>配置yum源并更新软件包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release -y</span><br><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum update -y</span><br><span class="line">touch /etc/yum.repos.d/Nginx.repo</span><br></pre></td></tr></table></figure>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
+<li>jdk bin文件（jdk-6u45-linux-x64.bin）</li>
+<li>oracle安装文件压缩包</li>
+</ol>
+<h4 id="安装jdk1-6"><a href="#安装jdk1-6" class="headerlink" title="安装jdk1.6"></a>安装jdk1.6</h4><h5 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h5><p>编辑 /etc/profile 加入以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.6.0_45</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br></pre></td></tr></table></figure>
 
-<p>写入内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx] </span><br><span class="line">name=nginx repo </span><br><span class="line">baseurl=http://nginx.org/packages/centos/$releasever/$basearch/ </span><br><span class="line">gpgcheck=0 </span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>
+<h5 id="解压并安装文件"><a href="#解压并安装文件" class="headerlink" title="解压并安装文件"></a>解压并安装文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/java</span><br><span class="line">mv jdk-6u45-linux-x64.bin /usr/java</span><br><span class="line">cd /usr/java</span><br><span class="line">chmod 777 *.bin</span><br><span class="line">yum -y remove java</span><br><span class="line">./*.bin</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 
-<h5 id="yum安装Nginx-NodeJS-Git"><a href="#yum安装Nginx-NodeJS-Git" class="headerlink" title="yum安装Nginx NodeJS Git"></a>yum安装Nginx NodeJS Git</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install git nginx nodejs -y</span><br><span class="line">npm config set registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+<h4 id="安装Oracle11g"><a href="#安装Oracle11g" class="headerlink" title="安装Oracle11g"></a>安装Oracle11g</h4><h5 id="创建用户并安装依赖包"><a href="#创建用户并安装依赖包" class="headerlink" title="创建用户并安装依赖包"></a>创建用户并安装依赖包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd oracle</span><br><span class="line">groupadd oinstall</span><br><span class="line">groupadd dba</span><br><span class="line">usermod -g oinstall -G dba oracle</span><br><span class="line">passwd oracle</span><br><span class="line">yum -y install binutils* compat-libcap1* compat-libstdc++* gcc* gcc-c++* glibc* glibc-devel* ksh* libaio* libaio-devel* libgcc* libstdc++* libstdc++-devel* libXi* libXtst* make* sysstat* elfutils* unixODBC*</span><br></pre></td></tr></table></figure>
 
-<h4 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h4><h5 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h5><blockquote>
-<p>方便Nginx部署直接进入Nginx的目录</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">cd /usr/share/nginx</span><br><span class="line">rm -rf html</span><br><span class="line">hexo init html</span><br><span class="line">cd html</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h5 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h5><p>/etc/sysctl.conf 加入以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fs.aio-max-nr = 1048576</span><br><span class="line">fs.file-max = 6815744</span><br><span class="line">kernel.shmmni = 4096</span><br><span class="line">kernel.sem = 250 32000 100 128</span><br><span class="line">net.ipv4.ip_local_port_range = 9000 65500</span><br><span class="line">net.core.rmem_default = 262144</span><br><span class="line">net.core.rmem_max = 4194304</span><br><span class="line">net.core.wmem_default = 262144</span><br><span class="line">net.core.wmem_max = 1048576</span><br></pre></td></tr></table></figure>
 
-<h5 id="修改站点配置"><a href="#修改站点配置" class="headerlink" title="修改站点配置"></a>修改站点配置</h5><blockquote>
-<p>注意冒号后面必须有一个空格</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: "Dzsfo's Blog" #站点标题</span><br><span class="line">subtitle: "站点副标题"</span><br><span class="line">description: "描述"</span><br><span class="line">keywords: "关键字"</span><br><span class="line">author: "作者,也就是你的名字"</span><br><span class="line">language: "zh-CN" #根据你主题的languages目录中的文件来决定</span><br><span class="line">timezone: "Asia/Shanghai" #时区</span><br><span class="line">url: "https://www.dzsfo.com" #站点中所有涉及到链接的地方都会调用这个，所以改成你自己的域名</span><br></pre></td></tr></table></figure>
+<p>/etc/security/limits.conf 加入以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">oracle           soft    nproc           4096</span><br><span class="line">oracle           hard    nproc           65536</span><br><span class="line">oracle           soft    nofile          4096</span><br><span class="line">oracle           hard    nofile          65536</span><br></pre></td></tr></table></figure>
 
-<h5 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>使配置生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
 
-<h3 id="部署发布"><a href="#部署发布" class="headerlink" title="部署发布"></a>部署发布</h3><h5 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h5><blockquote>
-<p>有时间再补充</p>
-</blockquote>
-<h5 id="Hexo自带Server"><a href="#Hexo自带Server" class="headerlink" title="Hexo自带Server"></a>Hexo自带Server</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 80</span><br></pre></td></tr></table></figure>
+<p>修改oracle用户环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line">vim .bash_profile</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>Hexo自带Server这种方式是有一个坑的，如果是在服务器上面运行Hexo，退出终端的话，服务也会随之停止。虽然网上有很多方式，比如用nohup，或者是nodejs的forever，但我试了一下都不太管用，好在Hexo的机制是生成纯静态文件，莫不如用Nginx来的实在。</p>
-</blockquote>
-<h5 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h5><blockquote>
-<p>有时间再补充</p>
-</blockquote>
+<p>加入以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ORACLE_BASE=/opt/OraDB11g</span><br><span class="line">ORACLE_SID=orcl</span><br><span class="line">ORACLE_HOME=/opt/OraDB11g/product/11.2.0/dbhome_1</span><br><span class="line">export ORACLE_BASE ORACLE_SID ORACLE_HOME</span><br><span class="line">PATH=$ORACLE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<h5 id="解压安装包并创建相应目录"><a href="#解压安装包并创建相应目录" class="headerlink" title="解压安装包并创建相应目录"></a>解压安装包并创建相应目录</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">source /home/oracle/.bash_profile</span><br><span class="line">exit</span><br><span class="line">mkdir -p /opt/OraDB11g</span><br><span class="line">mv oracle11g.zip /opt/OraDB11g</span><br><span class="line">cd /opt/OraDB11g</span><br><span class="line">unzip oracle11g.zip</span><br><span class="line">unzip linux.x64_11gR2_database_1of2.zip</span><br><span class="line">unzip linux.x64_11gR2_database_2of2.zip</span><br><span class="line">mv database install</span><br><span class="line">chown -R oracle.oinstall /opt/OraDB11g</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改安装脚本"><a href="#修改安装脚本" class="headerlink" title="修改安装脚本"></a>修改安装脚本</h5><p>/opt/OraDB11g/oracle11g/database/response/db_install.rsp 修改以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">oracle.install.option=INSTALL_DB_SWONLY</span><br><span class="line">ORACLE_HOSTNAME=Max</span><br><span class="line">UNIX_GROUP_NAME=oinstall</span><br><span class="line">INVENTORY_LOCATION=/opt/OraDB11g/oraInventory</span><br><span class="line">SELECTED_LANGUAGES=en,zh_CN</span><br><span class="line">ORACLE_HOME=/opt/OraDB11g/product/11.2.0/dbhome_1</span><br><span class="line">ORACLE_BASE=/opt/OraDB11g</span><br><span class="line">oracle.install.db.InstallEdition=EE</span><br><span class="line">oracle.install.db.DBA_GROUP=dba</span><br><span class="line">oracle.install.db.OPER_GROUP=oinstall</span><br><span class="line">oracle.install.db.config.starterdb.type=GENERAL_PURPOSE</span><br><span class="line">oracle.install.db.config.starterdb.globalDBName=orcl</span><br><span class="line">oracle.install.db.config.starterdb.SID=orcl</span><br><span class="line">oracle.install.db.config.starterdb.password.ALL=orcl</span><br><span class="line">oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE</span><br><span class="line">DECLINE_SECURITY_UPDATES=true</span><br></pre></td></tr></table></figure>
+
+<h5 id="执行安装"><a href="#执行安装" class="headerlink" title="执行安装"></a>执行安装</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line">cd /opt/OraDB11g/install/database</span><br><span class="line">./runInstaller -silent -responseFile /opt/OraDB11g/install/database/response/db_install.rsp -ignorePrereq</span><br></pre></td></tr></table></figure>
+
+<p>等待执行完成后 创建新窗口 使用root用户执行以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/opt/OraDB11g/oraInventory/orainstRoot.sh</span><br><span class="line">/opt/OraDB11g/product/11.2.0/dbhome_1/root.sh</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置监听"><a href="#配置监听" class="headerlink" title="配置监听"></a>配置监听</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>ORACLE_HOME/bin/netca /silent /responseFile /opt/OraDB11g/install/database/response/netca.rsp</span><br></pre></td></tr></table></figure>
+
+<h5 id="建立新库并创建实例"><a href="#建立新库并创建实例" class="headerlink" title="建立新库并创建实例"></a>建立新库并创建实例</h5><p>/opt/OraDB11g/install/database/response/dbca.rsp 修改以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GDBNAME = "orcl" #78行</span><br><span class="line">SID="orcl" #149行</span><br><span class="line">CHARACTERSET="AL32UTF8" #415行</span><br><span class="line">NATIONALCHARACTERSET="UTF8" #425行</span><br></pre></td></tr></table></figure>
+
+<p>执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>ORACLE_HOME/bin/dbca -silent -responseFile /opt/OraDB11g/install/database/response/dbca.rsp</span><br></pre></td></tr></table></figure>
+
+<p>执行后会清屏<br>这时盲输一次sys密码(前面安装时我们设置所有密码为orcl)<br>回车后再次盲输一次system密码(orcl)<br>回车等待创建完成即可</p>
+<h5 id="启动Oracle以及监听"><a href="#启动Oracle以及监听" class="headerlink" title="启动Oracle以及监听"></a>启动Oracle以及监听</h5><p>由于此安装方式并不会开机自启Oracle与监听，所以我们手动启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line">lsnrctl start</span><br><span class="line"></span><br><span class="line">sqlplus /nolog</span><br><span class="line">conn / as sysdba</span><br><span class="line">startup</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -571,7 +586,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.dzsfo.com/2019/06/16/hexo/" title="我这个Blog的搭建过程">https://www.dzsfo.com/2019/06/16/hexo/</a>
+    <a href="https://www.dzsfo.com/2019/11/27/Oracle11g/" title="CentOS静默安装Oracle11g与jdk">https://www.dzsfo.com/2019/11/27/Oracle11g/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -591,11 +606,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
           
-            <a href="/tags/Blog/" rel="tag"># Blog</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/Github/" rel="tag"># Github</a>
+            <a href="/tags/JDK/" rel="tag"># JDK</a>
           
         </div>
       
@@ -608,15 +623,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/10/11/Chrome-Hackbar/" rel="next" title="HackBar 2.2.6 Chrome版本 破解版">
+                <i class="fa fa-chevron-left"></i> HackBar 2.2.6 Chrome版本 破解版
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/19/BBR/" rel="prev" title="CentOS7开启BBR,VPS速度来个飞升">
-                CentOS7开启BBR,VPS速度来个飞升 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -857,7 +872,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建博客"><span class="nav-number">2.</span> <span class="nav-text">创建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境安装"><span class="nav-number">2.1.</span> <span class="nav-text">环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置yum源并更新软件包"><span class="nav-number">2.1.1.</span> <span class="nav-text">配置yum源并更新软件包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#yum安装Nginx-NodeJS-Git"><span class="nav-number">2.1.2.</span> <span class="nav-text">yum安装Nginx NodeJS Git</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo安装"><span class="nav-number">2.2.</span> <span class="nav-text">Hexo安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化Hexo"><span class="nav-number">2.2.1.</span> <span class="nav-text">初始化Hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改站点配置"><span class="nav-number">2.2.2.</span> <span class="nav-text">修改站点配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成静态文件"><span class="nav-number">2.2.3.</span> <span class="nav-text">生成静态文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署发布"><span class="nav-number">3.</span> <span class="nav-text">部署发布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Nginx"><span class="nav-number">3.0.1.</span> <span class="nav-text">Nginx</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hexo自带Server"><span class="nav-number">3.0.2.</span> <span class="nav-text">Hexo自带Server</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Github-Pages"><span class="nav-number">3.0.3.</span> <span class="nav-text">Github Pages</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装jdk1-6"><span class="nav-number">2.</span> <span class="nav-text">安装jdk1.6</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改环境变量"><span class="nav-number">2.1.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解压并安装文件"><span class="nav-number">2.2.</span> <span class="nav-text">解压并安装文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Oracle11g"><span class="nav-number">3.</span> <span class="nav-text">安装Oracle11g</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建用户并安装依赖包"><span class="nav-number">3.1.</span> <span class="nav-text">创建用户并安装依赖包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改配置"><span class="nav-number">3.2.</span> <span class="nav-text">修改配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解压安装包并创建相应目录"><span class="nav-number">3.3.</span> <span class="nav-text">解压安装包并创建相应目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改安装脚本"><span class="nav-number">3.4.</span> <span class="nav-text">修改安装脚本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行安装"><span class="nav-number">3.5.</span> <span class="nav-text">执行安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置监听"><span class="nav-number">3.6.</span> <span class="nav-text">配置监听</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#建立新库并创建实例"><span class="nav-number">3.7.</span> <span class="nav-text">建立新库并创建实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Oracle以及监听"><span class="nav-number">3.8.</span> <span class="nav-text">启动Oracle以及监听</span></a></li></ol></li></ol></div>
             
 
           </div>
